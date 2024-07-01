@@ -15,9 +15,7 @@ def test_has_title(login_page, test_locale, expected_text):
     login_page.view()
     login_page.wait_for_load_state('networkidle')
 
-    login_page.login_form.locator_login_input.fill(os.getenv('TEST_EMAIL'))
-    login_page.login_form.locator_password_input.fill(os.getenv('TEST_PASSWORD'))
-    login_page.login_form.locator_submit_button.click()
+    login_page.login_form.login(os.getenv('TEST_EMAIL'), os.getenv('TEST_PASSWORD'))
 
     expect(login_page.finish_registration_button).to_be_visible()
     expect(login_page.finish_registration_button).to_have_text(expected_text)
