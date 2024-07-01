@@ -7,7 +7,7 @@ load_dotenv()
 
 
 @pytest.mark.parametrize('test_locale, expected_text', [
-    ('ge-en', 'Finish Sign Up'),
+    ('us-en', 'Finish Sign Up'),
     ('ge-ru', 'Завершить оформление подписки')
 ])
 def test_has_title(login_page, test_locale, expected_text):
