@@ -10,7 +10,7 @@ load_dotenv()
     ('us-en', 'Finish Sign Up'),
     ('ge-ru', 'Завершить оформление подписки')
 ])
-def test_has_title(login_page, test_locale, expected_text):
+def test_login(login_page, test_locale, expected_text):
     login_page.locale = test_locale
     login_page.view()
     login_page.wait_for_load_state('networkidle')
